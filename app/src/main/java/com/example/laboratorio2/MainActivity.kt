@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
             contador = contador + 1
                 rollButton1.setText(contador.toString())
             if(contador == 10){
+                Toast.makeText(this, "Llegaste al objetivo", Toast.LENGTH_SHORT).show()
                 Imagen.visibility = View.VISIBLE
             }
             if(contador > 10){
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 Imagen.visibility = View.GONE
             }
             if(contador == 20){
+                Toast.makeText(this, "FELICITACIONES", Toast.LENGTH_SHORT).show()
                 Imagen2.visibility = View.VISIBLE
             }
             if(contador < 20){
@@ -73,9 +75,13 @@ class MainActivity : AppCompatActivity() {
 
 
     fun Reiniciar(view: View) {
+        val Imagen: ImageView = findViewById(R.id.imageView)
+        val Imagen2: ImageView = findViewById(R.id.imageView2)
         val rollButton1: EditText = findViewById(R.id.editText2)
         contador = 0
         rollButton1.setText(contador.toString())
+        Imagen2.visibility = View.GONE
+        Imagen.visibility = View.GONE
     }
 
 }
